@@ -7,6 +7,7 @@ class Personagem:
         self.agilidade = agilidade
         self.inteligencia = inteligencia
         self.vontade = vontade
+        self.carisma = carisma
         self.vida = 100
         self.ether = 100
         self.etherMax = 100
