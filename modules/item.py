@@ -7,4 +7,4 @@ class Item:
     self.nomevisual = nomevisual
     self.desc = desc
     self.quantidade = quantidade
-    #self.tipo = tipo #Listagem de tipos de items: consumivel, armadura (capacete, peitoral, etc.), arma, 
+    #self.tipo = tipo #Listagem de tipos de items: consumivel, armadura (capacete, peitoral, etc.), arma, missaoitem
