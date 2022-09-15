@@ -1,7 +1,7 @@
 
 class Personagem:
-    def __init__(self, name, forca, fortitude, agilidade, inteligencia, vontade, carisma) -> None:
-        self.name = name
+    def __init__(self, nome, forca, fortitude, agilidade, inteligencia, vontade, carisma) -> None:
+        self.nome = nome
         self.forca = forca
         self.fortidude = fortitude
         self.agilidade = agilidade
