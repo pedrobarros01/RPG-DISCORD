@@ -1,3 +1,9 @@
+from modules import personagem, item, efeito
+
+Personagem = personagem.Personagem
+Efeito = efeito.Efeito
+Item = item.Item
+
 def getStat(entity, stat):
   if (entity[stat]):
     return entity[stat]
@@ -56,14 +62,9 @@ entitybase = {
   "attacktime":0
 }
 
-def fight(actors):
-  game = True;
-  while(game):
-    for i in actors:
-      print(getStat(actors[i], "name"))
-    
 
-tempbattle = {}
-tempbattle[1] = entitybase
-
-fight(tempbattle)
+bot = Personagem("BOT", 0, 0, 0, 0, 0, 0)
+espada = Item()
+bot.equipar(espada)
+bot.desequipar(espada)
+espada.examinar()
