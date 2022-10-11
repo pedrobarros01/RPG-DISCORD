@@ -1,7 +1,13 @@
+import random
+
+from modules.funcoes import scaling
+from modules.mundo import Mundo
+
+
 class Personagem:
 
-  def __init__(self, nome, forca, fortitude, agilidade, inteligencia, vontade,
-               carisma) -> None:
+  def __init__(self, nome = "Pedrungas "+str(random.randint(0, 1000)), forca = 0, fortitude = 0, agilidade = 0, inteligencia = 0, vontade = 0,
+               carisma = 0) -> None:
     self.nome = nome
     self.forca = forca
     self.fortidude = fortitude
@@ -15,13 +21,47 @@ class Personagem:
     self.fome = 100
     self.sede = 100
     self.sangue = 100
+    
+    self.desvio = 0
+    
+    self.resistencias = [] # Resistencias ou fraquezas a dano
+    self.passivas = []
+    self.status = [] # Status como queimado, congelado, etc
     self.inventario = []
     self.equipado = []
+    self.ataques = []
+    
+    self.mundo = None
+    self.time = "neutro"
+    self.ai = "console"
 
-  def atacar(self) -> float:
+  def setMundo(self, mundo):
+    self.mundo = mundo
+    pass
+  
+  def getMundo(self) -> Mundo:
+    return self.mundo
+
+  def getTime(self):
+    return self.time
+  
+  def setTime(self, time):
+    self.time = time
+    pass
+  def getNivel(self) -> int:
+    soma = 0
+    soma += scaling(stat = self.forca + self.fortidude + self.agilidade + self.inteligencia + self.vontade + self.carisma, scaling = 5)
+    return soma
+
+  def atacar(self, ataque):
+    ataque.rolar(personagem=self)
     pass
 
   def habilidade(self):
+    pass
+
+  def aprenderAtaque(self, ataque):
+    self.ataques.append(ataque)
     pass
 
   def getTipo(self):

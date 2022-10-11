@@ -1,4 +1,7 @@
 from modules import personagem, item, efeito
+from modules.ataque import Ataque
+from modules.efeito_dano import Dano
+from modules.mundo import Mundo
 
 Personagem = personagem.Personagem
 Efeito = efeito.Efeito
@@ -63,8 +66,26 @@ entitybase = {
 }
 
 
+
 bot = Personagem("BOT", 0, 0, 0, 0, 0, 0)
 espada = Item()
 bot.equipar(espada)
 bot.desequipar(espada)
+bot.setTime("Time 2")
 espada.examinar()
+
+inimigo = Personagem(nome = "BOT 2")
+
+mundot = Mundo("Mundo de Teste",[bot, inimigo])
+bot.setMundo(mundot)
+inimigo.setMundo(mundot)
+inimigo.setTime("Time 1")
+
+ataquebasico = Ataque(efeitos_sucesso=[Dano(origem=inimigo,dano=20) ],alvo="unico_inimigo")
+inimigo.aprenderAtaque(ataquebasico)
+bot.aprenderAtaque(ataquebasico)
+
+
+inimigo.atacar(ataquebasico)
+
+bot.atacar(ataquebasico)
