@@ -6,6 +6,13 @@ class Efeito: #Efeitos utilizados para skills, items, ataques, etc. Exemplos ser
     self.hitcancela = hitcancela #Só funcionaria com o Delay. Quando um personagem tomar um hit, escaneiam se todos os efeitos e caso hitcancela = true cancele hitcancela.
     self.alvo = alvo #O alvo do efeito.
     
+    
+  def getOrigem(self):
+    return(self.origem)
+  
+  def setOrigem(self, origem):
+    self.origem = origem
+    
   def getTipo(self):
     return(self.__class__.__name__)
     

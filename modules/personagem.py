@@ -1,6 +1,8 @@
 import random
+from modules.ataque import Ataque
 
 from modules.funcoes import scaling
+from modules.item import Item
 from modules.mundo import Mundo
 
 
@@ -54,6 +56,7 @@ class Personagem:
     return soma
 
   def atacar(self, ataque):
+    ataque.setOrigem(self)
     ataque.rolar(personagem=self)
     pass
 
@@ -61,7 +64,8 @@ class Personagem:
     pass
 
   def aprenderAtaque(self, ataque):
-    self.ataques.append(ataque)
+    atk = Ataque(ataque)
+    self.ataques.append(atk)
     pass
 
   def getTipo(self):
@@ -71,6 +75,11 @@ class Personagem:
     self.inventario.append(item)
     item.parente.remove(item)
     item.parente = self.inventario
+    pass
+  
+  def receberItem(self, item):
+    ite = Item(item)
+    self.inventario.append(ite)
     pass
   
   def equipar(self, item):

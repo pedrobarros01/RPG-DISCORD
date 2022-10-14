@@ -1,3 +1,4 @@
+from modules import personagem
 from modules.efeito import Efeito
 from modules.funcoes import send_text
 
@@ -15,10 +16,16 @@ class Dano(Efeito):
     
     def efeito(self):
         resist = 1
+        
+        
         for resistencia in self.alvo.resistencias:
             if resistencia.tipo == self.tipo_dano:
                 resist = resist + resistencia.valor
-        total_dano = self.origem.dano * resist
+                
+        total_dano = 0
+
+                
+        total_dano = self.dano * resist
         send_text(self.alvo.nome + " recebeu " + str(total_dano) + " de dano " + self.tipo_dano + "!")
         self.alvo.vida = self.alvo.vida - total_dano
         

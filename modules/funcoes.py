@@ -9,7 +9,6 @@ def debugconsole(texto):
     if(debugstatus == True):
         print("[D] "+texto)
 
-
 def rolar(dados = 1, faces = 6, modificador = 0):
     resultado = 0
     for i in range(dados):
