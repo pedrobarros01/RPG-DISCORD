@@ -1,18 +1,35 @@
 
 
-
 class Tabuleiro:
-    def __init__(self, coluna, linhas, tipoMundo) -> None:
+    def __init__(self, tipoMundo):
         self.tabuleiro = []
-        for i in range(0, linhas):
-            listaAux = []
-            for j in range(0, coluna):
-                self.tabuleiro.append(listaAux)
-        self.tipoMundo = tipoMundo
+        self._tipoMundo = tipoMundo
+        self.arq = open('files/mapasRPG.txt', 'r')
+        self.auxArq = self.arq.read()
+        self.auxArq = self.auxArq.split('MAPA ')
+    
+    @property   
+    def tipoMundo(self):
+        return self._tipoMundo
+
+    @tipoMundo.setter
+    def tipoMundo(self, tipoMundo):
+        self._tipoMundo = tipoMundo
+
+    def inicializarTabuleiro(self):
+        mapa = self.auxArq[self._tipoMundo]
+        mapa = mapa.splitlines()
+        mapa = mapa[1:]
+        self.tabuleiro = []
+        for stringsMapa in mapa:
+            self.tabuleiro.append(stringsMapa.split(' '))
+    
 
     def mostrarTabuleiro(self):
-        for campo in self.tabuleiro:
-            print(campo)
+        for linha in self.tabuleiro:
+            for coluna in linha:
+                print(coluna, end=' ')
+            print()
     '''
     def renderizarTabuleiro(self):
         # pode ser 3 mundos diferentes de si

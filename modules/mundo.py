@@ -2,10 +2,10 @@ from modules.tabuleiro import Tabuleiro
 
 
 class Mundo(Tabuleiro):
-    def __init__(self, nome = "Mundo", personagens = [], linha = 10, colunas = 10, tipo_mundo = 1):
+    def __init__(self, nome = "Mundo", personagens = [], tipo_mundo = 1):
         self.nome = nome
         self.personagens = personagens
-        super().__init__(colunas, linha, tipo_mundo)
+        super().__init__(tipo_mundo)
         
     def getInimigos(self, time):
         inimigos = []

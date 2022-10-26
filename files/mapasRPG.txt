@@ -1,0 +1,24 @@
+MAPA 1
+A A A A A A A A A A C
+A A A A A A A A C C C
+A A A A A A A A C A A
+A A A A A A A A C A A
+A A A A A A C C C A A
+A A A A A A C A A A A
+A A A A A A C A A A A
+A A A A A A C C C A A
+A A A A A A A A C A A
+A A A A A A C C C A A
+A A A A A A C A A A A
+MAPA 2
+C A A A A A A A A A A
+C C C A A A A A A A A
+A A C A A A A A A A A
+A A C A A A A A A A A
+A A C C C A A A A A A
+A A A A C A A A A A A
+A A A A C A A A A A A
+A A A A C C C A A A A
+A A A A A A C A A A A
+A A A A A A C C C A A
+A A A A A A A A C A A

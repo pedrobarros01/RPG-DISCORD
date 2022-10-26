@@ -4,8 +4,9 @@ from modules.efeito_dano import Dano
 from modules.itens import listaItens
 from modules.mundo import Mundo
 from modules.ataques import listaAtaques
+from modules.tabuleiro import Tabuleiro
 
-Personagem = personagem.Personagem
+'''Personagem = personagem.Personagem
 Efeito = efeito.Efeito
 Item = item.Item
 
@@ -65,11 +66,11 @@ entitybase = {
   "efeitosdestatus":{},
 
   "attacktime":0
-}
+}'''
 
 
 
-bot = Personagem("BOT FORTE", 100, 0, 0, 0, 0, 0)
+'''bot = Personagem("BOT FORTE", 100, 0, 0, 0, 0, 0)
 espada = Item()
 bot.equipar(espada)
 bot.desequipar(espada)
@@ -91,5 +92,12 @@ bot.aprenderAtaque(ataquebasico)
 
 
 inimigo.atacar(ataquebasico)
-
 bot.atacar(ataquebasico)
+
+'''
+# C representa o caminho a se seguir, A representa "paisagem"
+tabuleiro = Tabuleiro(1)
+tabuleiro.tipoMundo = 2
+tabuleiro.inicializarTabuleiro()
+tabuleiro.mostrarTabuleiro()
+
